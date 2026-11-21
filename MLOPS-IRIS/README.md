@@ -74,7 +74,7 @@ MLOPS-IRIS
 
 # 3. Abrir la terminal
 - En VS Code ir al menú *Terminal → New Terminal*.
-- Verificar que la terminal sea **PowerShell** y que la ruta termine en `MLOPS-IRIS-SANTOTO`.
+- Verificar que la terminal sea **PowerShell** y que la ruta termine en `MLOPS-IRIS`.
 - Verificar la versión de Python:
 ```powershell
 py --list
