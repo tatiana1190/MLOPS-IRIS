@@ -55,7 +55,7 @@ pytest>=8.0
 
 - Al terminar, el panel *Explorer* de VS Code debe verse así:
 ```
-MLOPS-IRIS-SANTOTO
+MLOPS-IRIS
 │
 ├── src/
 │   ├── prepare.py
