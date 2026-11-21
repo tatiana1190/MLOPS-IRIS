@@ -1,0 +1,67 @@
+{
+  "nombre": "Contrato de datos - Clasificador Iris",
+  "version": "1.0.0",
+  "descripcion": "Define la estructura, los tipos y los rangos válidos de los datos que entran al modelo, tanto para entrenamiento como para la futura inferencia.",
+  "responsable": "Equipo MLOps - Especialización en Ciencia de Datos, Universidad Santo Tomás",
+  "unidad_de_medida": "centímetros",
+  "columnas": {
+    "sepal_length": {
+      "tipo": "float",
+      "nulo_permitido": false,
+      "min": 4.0,
+      "max": 8.0,
+      "descripcion": "Largo del sépalo (cm)"
+    },
+    "sepal_width": {
+      "tipo": "float",
+      "nulo_permitido": false,
+      "min": 2.0,
+      "max": 4.5,
+      "descripcion": "Ancho del sépalo (cm)"
+    },
+    "petal_length": {
+      "tipo": "float",
+      "nulo_permitido": false,
+      "min": 1.0,
+      "max": 7.0,
+      "descripcion": "Largo del pétalo (cm)"
+    },
+    "petal_width": {
+      "tipo": "float",
+      "nulo_permitido": false,
+      "min": 0.1,
+      "max": 2.5,
+      "descripcion": "Ancho del pétalo (cm)"
+    }
+  },
+  "objetivo": {
+    "nombre": "species",
+    "tipo": "int",
+    "nulo_permitido": false,
+    "dominio": [0, 1, 2],
+    "etiquetas": {
+      "0": "setosa",
+      "1": "versicolor",
+      "2": "virginica"
+    },
+    "requerido_en_inferencia": false
+  },
+  "ejemplo_entrada_valida": {
+    "sepal_length": 5.1,
+    "sepal_width": 3.5,
+    "petal_length": 1.4,
+    "petal_width": 0.2
+  },
+  "ejemplo_entrada_invalida": {
+    "sepal_length": "cinco",
+    "sepal_width": null,
+    "petal_length": 65.0,
+    "petal_width": -0.3
+  },
+  "errores_esperados_entrada_invalida": [
+    "sepal_length: no es de tipo float",
+    "sepal_width: no puede ser nulo",
+    "petal_length: supera el máximo (7.0)",
+    "petal_width: está por debajo del mínimo (0.1)"
+  ]
+}

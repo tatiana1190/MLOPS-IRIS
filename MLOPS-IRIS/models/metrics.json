@@ -1,0 +1,10 @@
+{
+  "fecha_entrenamiento": "2026-11-21T11:29:17",
+  "modelo": "RandomForestClassifier",
+  "n_estimators": 100,
+  "max_depth": null,
+  "random_state": 42,
+  "filas_train": 150,
+  "filas_test": 30,
+  "accuracy": 1.0
+}
