@@ -1,9 +1,5 @@
 # Actividad – Pipeline MLOps Reproducible con Validación y Contrato de Datos (Iris)
 
-**Autora:** Leidy Tatiana Moncada Felizzola
-**Programa:** Especialización en Ciencia de Datos – Universidad Santo Tomás, Seccional Tunja
-**Asignatura:** Seminario II
-
 ## Objetivo
 Automatizar el entrenamiento y la validación del modelo Random Forest construido en la Actividad 1.1 con el conjunto de datos Iris.
 Con un solo comando se preparan los datos, se validan contra un contrato de datos, se entrena el modelo
@@ -15,23 +11,21 @@ Antes de iniciar, verificar que se encuentre instalado:
 - Python 3.10 o superior (el proyecto se probó con Python 3.13)
 - Visual Studio Code
 - Extensión de Python para VS Code
-- Git
-- Una cuenta en GitHub
 ---
 
 # 1. Crear la carpeta del proyecto
 - Crear una carpeta para el laboratorio con el nombre:
 ```
-MLOPS-IRIS-SANTOTO
+MLOPS-IRIS
 ```
 - Dentro de ella crear dos subcarpetas:
 ```
 src
 tests
 ```
-- Abrir la carpeta `MLOPS-IRIS-SANTOTO` desde Visual Studio Code (*File → Open Folder*).
+- Abrir la carpeta `MLOPS-IRIS` desde Visual Studio Code (*File → Open Folder*).
 
-> Si ya se cuenta con el archivo `MLOPS-IRIS-SANTOTO.zip`, basta con descomprimirlo, abrir la carpeta en VS Code y continuar en el paso 3.
+> Si ya se cuenta con el archivo `MLOPS-IRIS.zip`, basta con descomprimirlo, abrir la carpeta en VS Code y continuar en el paso 3.
 ---
 
 # 2. Crear los archivos del proyecto
@@ -309,63 +303,3 @@ PIPELINE FINALIZADO CORRECTAMENTE
 ```
 ---
 
-# 14. Subir el proyecto a GitHub
-- Entrar a https://github.com y crear un repositorio nuevo (*New repository*) llamado:
-```
-MLOPS-IRIS-SANTOTO
-```
-- Dejarlo **Public** y **sin** marcar la opción de crear README (el proyecto ya tiene uno).
-- En la terminal de VS Code, configurar Git (solo si es la primera vez que se usa en el equipo):
-```powershell
-git config --global user.name "Su Nombre"
-git config --global user.email "su_correo@ejemplo.com"
-```
-- Ejecutar, uno por uno:
-```powershell
-git init
-git add .
-git commit -m "Pipeline MLOps Iris: orquestación, validación y contrato de datos"
-git branch -M main
-git remote add origin https://github.com/<usuario>/MLOPS-IRIS-SANTOTO.git
-git push -u origin main
-```
-- Reemplazar `<usuario>` por el usuario de GitHub.
-- El archivo `.gitignore` evita que se suban `.venv/`, `data/` y `models/`, porque se generan de nuevo al ejecutar el pipeline.
-- Recargar la página del repositorio en GitHub y verificar que aparezcan las carpetas `src` y `tests`, y los archivos `run_pipeline.py`, `data_contract.json`, `README.md` y los demás.
----
-
-# 15. Entregar
-- Crear una carpeta en Google Drive o SharePoint.
-- Dentro de la carpeta subir un documento con el enlace al repositorio de GitHub:
-```
-https://github.com/<usuario>/MLOPS-IRIS-SANTOTO
-```
-- Verificar que el repositorio contenga:
-  - El script de automatización del pipeline (`run_pipeline.py`).
-  - El archivo de validación de datos (`src/validate_data.py`).
-  - El contrato de datos (`data_contract.json`).
-  - El archivo README técnico (`README.md`).
-- Compartir la carpeta con permisos de lectura para el docente.
----
-
-# Solución de problemas
-
-| Problema | Solución |
-|---|---|
-| PowerShell no deja activar el entorno | Ejecutar `Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned` y activar de nuevo |
-| `py -3.13` no se reconoce | Usar la versión que muestre `py --list`, o `python -m venv .venv` |
-| `ModuleNotFoundError: No module named 'sklearn'` | El entorno no está activo: ejecutar `.venv\Scripts\activate` |
-| El pipeline se detiene en la etapa 2 sin haber saboteado | Ejecutar `python romper_datos.py restaurar` |
-| `git push` pide usuario y contraseña | Iniciar sesión con la ventana de GitHub que se abre, o usar un token personal en lugar de la contraseña |
----
-
-# Resultado esperado
-
-Al finalizar el laboratorio se deberá contar con:
-
-- Un pipeline que se ejecuta con un solo comando (`python run_pipeline.py`).
-- Validación de datos sin librerías externas (tipos, nulos y rangos).
-- Un contrato de datos en JSON con un ejemplo de entrada válida y uno inválido.
-- 10 pruebas automatizadas aprobadas y accuracy de 0.9000.
-- Evidencia de los 7 sabotajes y del control que detuvo cada uno.
-- El repositorio publicado en GitHub con el enlace entregado en Drive o SharePoint.
